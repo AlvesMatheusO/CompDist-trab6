@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package music;
+
+message Empty {}
+
+message User {
+  int32 id = 1;
+  string nome = 2;
+  int32 idade = 3;
+}
+
+message Music {
+  int32 id = 1;
+  string nome = 2;
+  string artista = 3;
+}
+
+message Playlist {
+  int32 id = 1;
+  string nome = 2;
+  int32 usuarioId = 3;
+  repeated int32 musicaIds = 4;
+}
+
+message UsersResponse {
+  repeated User usuarios = 1;
+}
+
+message MusicsResponse {
+  repeated Music musicas = 1;
+}
+
+message PlaylistsRequestByUser {
+  int32 usuarioId = 1;
+}
+
+message PlaylistsRequestByMusic {
+  int32 musicaId = 1;
+}
+
+message PlaylistsResponse {
+  repeated Playlist playlists = 1;
+}
+
+message MusicsByPlaylistRequest {
+  int32 playlistId = 1;
+}
+
+message MusicsByPlaylistResponse {
+  repeated Music musicas = 1;
+}
+
+service MusicService {
+  rpc ListUsuarios(Empty) returns (UsersResponse);
+  rpc ListMusicas(Empty) returns (MusicsResponse);
+  rpc ListPlaylistsPorUsuario(PlaylistsRequestByUser) returns (PlaylistsResponse);
+  rpc ListMusicasPorPlaylist(MusicsByPlaylistRequest) returns (MusicsByPlaylistResponse);
+  rpc ListPlaylistsPorMusica(PlaylistsRequestByMusic) returns (PlaylistsResponse);
+}
