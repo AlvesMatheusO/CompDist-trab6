@@ -1,18 +1,18 @@
 {
-  "name": "grpc-api",
+  "name": "soap-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@grpc/grpc-js": "^1.14.1",
-    "@grpc/proto-loader": "^0.8.0"
+    "express": "^5.1.0",
+    "soap": "^1.6.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

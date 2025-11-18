@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="MusicService"
+             targetNamespace="http://example.com/music"
+             xmlns:tns="http://example.com/music"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://example.com/music">
+      <xsd:complexType name="User">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:int"/>
+          <xsd:element name="nome" type="xsd:string"/>
+          <xsd:element name="idade" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="Music">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:int"/>
+          <xsd:element name="nome" type="xsd:string"/>
+          <xsd:element name="artista" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="ListUsuariosRequest"/>
+  <wsdl:message name="ListUsuariosResponse">
+    <wsdl:part name="usuarios" type="tns:User"/>
+  </wsdl:message>
+
+  <wsdl:message name="ListMusicasRequest"/>
+  <wsdl:message name="ListMusicasResponse">
+    <wsdl:part name="musicas" type="tns:Music"/>
+  </wsdl:message>
+
+  <wsdl:portType name="MusicPortType">
+    <wsdl:operation name="ListUsuarios">
+      <wsdl:input message="tns:ListUsuariosRequest"/>
+      <wsdl:output message="tns:ListUsuariosResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ListMusicas">
+      <wsdl:input message="tns:ListMusicasRequest"/>
+      <wsdl:output message="tns:ListMusicasResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="MusicBinding" type="tns:MusicPortType">
+    <soap:binding style="rpc"
+                  transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ListUsuarios">
+      <soap:operation soapAction="listUsuarios"/>
+      <wsdl:input><soap:body use="encoded" namespace="urn:MusicService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></wsdl:input>
+      <wsdl:output><soap:body use="encoded" namespace="urn:MusicService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMusicas">
+      <soap:operation soapAction="listMusicas"/>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="MusicService">
+    <wsdl:port name="MusicPort" binding="tns:MusicBinding">
+      <soap:address location="http://localhost:3004/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</definitions>
