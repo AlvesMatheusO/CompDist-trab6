@@ -1,0 +1,35 @@
+
+Summary:
+  Count:	2000
+  Total:	149.42 ms
+  Slowest:	12.22 ms
+  Fastest:	0.47 ms
+  Average:	3.05 ms
+  Requests/sec:	13384.75
+
+Response time histogram:
+  0.469  [1]   |
+  1.644  [47]  |∎∎
+  2.820  [968] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.995  [809] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  5.171  [119] |∎∎∎∎∎
+  6.346  [6]   |
+  7.522  [0]   |
+  8.697  [0]   |
+  9.872  [18]  |∎
+  11.048 [15]  |∎
+  12.223 [17]  |∎
+
+Latency distribution:
+  10 % in 2.11 ms 
+  25 % in 2.44 ms 
+  50 % in 2.81 ms 
+  75 % in 3.26 ms 
+  90 % in 3.87 ms 
+  95 % in 4.43 ms 
+  99 % in 10.84 ms 
+
+Status code distribution:
+  [OK]   2000 responses   
+
+
