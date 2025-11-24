@@ -1,0 +1,126 @@
+# ================================
+# 🔥 NODE.JS
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env
+.env
+.env.local
+.env.*.local
+
+# build
+dist/
+build/
+.tmp/
+.cache/
+
+# ================================
+# 🐍 PYTHON
+# ================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# virtual environments
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+
+# python cache
+pip-wheel-metadata/
+pip-log.txt
+
+# ================================
+# 🛰 gRPC GENERATED FILES
+# ================================
+python/grpc/*.pyc
+python/grpc/__pycache__/
+python/grpc/*.pb2.py
+python/grpc/*_pb2.py
+python/grpc/*_pb2_grpc.py
+
+# (Keep the .proto file)
+!python/grpc/*.proto
+
+# ================================
+# 🧪 TESTE DE CARGA (K6 / GHZ)
+# ================================
+results/
+charts/
+*.json.tmp
+*.csv
+
+# ================================
+# 📚 DOCUMENTAÇÕES E TEMP
+# ================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+
+# ================================
+# 🧠 IDEs e editores
+# ================================
+# VSCode
+.vscode/
+.history/
+.code/
+
+# JetBrains
+.idea/
+*.iml
+
+# ================================
+# 🐳 DOCKER
+# ================================
+docker-data/
+docker-compose.override.yml
+
+# volumes
+volumes/
+tmp/
+
+# ================================
+# 🖥 SISTEMA OPERACIONAL
+# ================================
+# Linux
+*~
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ================================
+# 🖼 ARQUIVOS DE GRÁFICOS (OUTPUT)
+# ================================
+chart.png
+*.png
+
+# ================================
+# 🧪 K6 SCRIPTS (se forem gerados automaticamente)
+# ================================
+*.tar
+k6-out/
+
+# ================================
+# 🔧 OUTROS
+# ================================
+/outputs/
+.cache/

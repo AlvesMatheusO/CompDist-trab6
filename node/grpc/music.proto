@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service Music {
+  rpc ListarUsuarios(Empty) returns (UsuariosResponse);
+}
+
+message Empty {}
+
+message Usuario {
+  int32 id = 1;
+  string nome = 2;
+  int32 idade = 3;
+}
+
+message UsuariosResponse {
+  repeated Usuario usuarios = 1;
+}
